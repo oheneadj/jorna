@@ -1,52 +1,68 @@
 <x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
-        @csrf
-
-        <!-- Name -->
-        <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
+    <div class="signin-inner my-4 my-lg-0 bg-white shadow-soft border rounded border-gray-300 p-4 p-lg-5 w-100 fmxw-500">
+        <div class="alert alert-success alert-dismissible fade show" role="alert"><span class="fas fa-bullhorn me-1"></span> <strong>Holy guacamole!</strong> You should check in on some of those fields below. <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>
+        <div class="text-center text-md-center mb-4 mt-md-0">
+            <h1 class="mb-0 h3">Create an account</h1>
         </div>
-
-        <!-- Email Address -->
-        <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+        <form action="#">
+            <!-- Form -->
+            <div class="form-group mb-4">
+                <label for="email">Your Email</label>
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon3"><span class="fas fa-envelope"></span></span>
+                    <input type="email" class="form-control" placeholder="example@company.com" id="email" required>
+                </div>
+            </div>
+            <!-- End of Form -->
+            <div class="form-group">
+                <!-- Form -->
+                <div class="form-group mb-4">
+                    <label for="password">Your Password</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon4"><span class="fas fa-unlock-alt"></span></span>
+                        <input type="password" placeholder="Password" class="form-control" id="password" required>
+                    </div>
+                </div>
+                <!-- End of Form -->
+                <!-- Form -->
+                <div class="form-group mb-4">
+                    <label for="password_confirm">Confirm Password</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon5"><span class="fas fa-unlock-alt"></span></span>
+                        <input type="password" placeholder="Confirm Password" class="form-control" id="password_confirm" required>
+                    </div>
+                </div>
+                <!-- End of Form -->
+                <div class="form-check mb-4">
+                    <input class="form-check-input" type="checkbox" value="" id="terms">
+                    <label class="form-check-label" for="terms">
+                        I agree to the <a href="#">terms and conditions</a>
+                    </label>
+                </div>
+            </div>
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary">Sign up</button>
+            </div>
+        </form>
+        <div class="mt-3 mb-4 text-center">
+            <span class="fw-normal">or</span>
         </div>
-
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
-
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="new-password" />
-
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
-
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
-
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                            type="password"
-                            name="password_confirmation" required autocomplete="new-password" />
-
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}">
-                {{ __('Already registered?') }}
+        <div class="btn-wrapper my-4 text-center">
+            <a href="#" class="btn btn-icon-only btn-pill btn-outline-gray-300 text-facebook me-2" aria-label="facebook button" title="facebook button">
+                <span aria-hidden="true" class="fab fa-facebook-f"></span>
             </a>
-
-            <x-primary-button class="ms-4">
-                {{ __('Register') }}
-            </x-primary-button>
+            <a href="#" class="btn btn-icon-only btn-pill btn-outline-gray-300 text-twitter me-2" aria-label="twitter button" title="twitter button">
+                <span aria-hidden="true" class="fab fa-twitter"></span>
+            </a>
+            <a href="#" class="btn btn-icon-only btn-pill btn-outline-gray-300 text-facebook" aria-label="github button" title="github button">
+                <span aria-hidden="true" class="fab fa-github"></span>
+            </a>
         </div>
-    </form>
+        <div class="d-flex justify-content-center align-items-center mt-4">
+                                <span class="fw-normal">
+                                    Already have an account?
+                                    <a href="./sign-in.html" class="fw-bold text-underline">Login here</a>
+                                </span>
+        </div>
+    </div>
 </x-guest-layout>

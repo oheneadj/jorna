@@ -20,7 +20,25 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->name('dashboard');
+
+Route::get('/create', function () {
+    return view('story.create');
+})->name('create');
+
+Route::get('/edit', function () {
+    return view('story.edit');
+})->name('edit');
+
+Route::get('/show', function () {
+    return view('story.show');
+})->name('show');
+
+Route::get('/stories', function () {
+    return view('story.index');
+})->name('stories');
+
+//->middleware(['auth', 'verified']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -28,4 +46,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
