@@ -1,6 +1,11 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Livewire\Dashboard;
+use App\Livewire\Story\StoryCreate;
+use App\Livewire\Story\StoryEdit;
+use App\Livewire\Story\StoryIndex;
+use App\Livewire\Story\StoryShow;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,25 +23,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+Route::get('/dashboard', Dashboard::class)->name('dashboard');
 
-Route::get('/create', function () {
-    return view('story.create');
-})->name('create');
+Route::get('/stories/create', StoryCreate::class)->name('create');
 
-Route::get('/edit', function () {
-    return view('story.edit');
-})->name('edit');
+Route::get('/stories/edit', StoryEdit::class)->name('edit');
 
-Route::get('/show', function () {
-    return view('story.show');
-})->name('show');
+Route::get('/stories/{story}', StoryShow::class)->name('show');
 
-Route::get('/stories', function () {
-    return view('story.index');
-})->name('stories');
+Route::get('/stories', StoryIndex::class)->name('stories');
 
 //->middleware(['auth', 'verified']);
 

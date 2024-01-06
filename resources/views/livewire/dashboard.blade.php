@@ -1,4 +1,4 @@
-<x-app-layout>
+<div>
     <div class="row pt-md-0 pt-5">
         <x-sidebar />
         <div class="col-12 col-lg-8">
@@ -15,7 +15,7 @@
                                 <span class="fas fa-book"></span>
                             </div>
                             <div><span class="d-block h6 fw-normal">Stories</span>
-                                <h5 class="h4 fw-bold mb-1">365</h5>
+                                <h5 class="h4 fw-bold mb-1">{{$stories->count()}}</h5>
                                 <div class="small mt-2">in your <span class="fw-bold">Jorna</span>
                                 </div>
                             </div>
@@ -81,7 +81,7 @@
                         <div class="d-flex justify-content-between align-items-center mb-0">
                             <div class="d-flex mt-3">
                                 <img class="avatar-sm img-fluid rounded-circle mx-2"
-                                    src="/assets/img/team/profile-picture-1.jpg" alt="avatar" />
+                                     src="/assets/img/team/profile-picture-1.jpg" alt="avatar" />
                                 <span class="font-small">
                                     <a href="single-message.html#">
 
@@ -92,8 +92,8 @@
 
                             <div class="d-none d-sm-block">
                                 <button class="btn btn-link text-dark" aria-label="phone" data-toggle="tooltip"
-                                    data-placement="top" title="Sent from the phone "
-                                    data-original-title="Sent from the phone">
+                                        data-placement="top" title="Sent from the phone "
+                                        data-original-title="Sent from the phone">
                                     <span class="fas fa-chevron-right"></span>
                                 </button>
                             </div>
@@ -106,7 +106,7 @@
                         <div class="d-flex justify-content-between align-items-center mb-0">
                             <div class="d-flex mt-3">
                                 <img class="avatar-sm img-fluid rounded-circle mx-2"
-                                    src="/assets/img/team/profile-picture-1.jpg" alt="avatar" />
+                                     src="/assets/img/team/profile-picture-1.jpg" alt="avatar" />
                                 <span class="font-small">
                                     <a href="single-message.html#">
 
@@ -117,8 +117,8 @@
 
                             <div class="d-none d-sm-block">
                                 <button class="btn btn-link text-dark" aria-label="phone" data-toggle="tooltip"
-                                    data-placement="top" title="Sent from the phone "
-                                    data-original-title="Sent from the phone">
+                                        data-placement="top" title="Sent from the phone "
+                                        data-original-title="Sent from the phone">
                                     <span class="fas fa-chevron-right"></span>
                                 </button>
                             </div>
@@ -131,4 +131,4 @@
 
         </div>
     </div>
-</x-app-layout>
+</div>

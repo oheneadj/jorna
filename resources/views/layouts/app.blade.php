@@ -4,7 +4,10 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('app.name', 'Laravel') }}</title>
+
+    <title>{{ config('app.name', 'Laravel') }} - {{ $title ?? "Journal on the go!"}}</title>
+
+
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
     <meta name="title" content="Pixel Pro - Messages" />
     <meta name="author" content="Themesberg" />
@@ -82,7 +85,9 @@
                                 class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>
                     </div>
                 </div>
-                {{ $slot }}
+                @isset($slot)
+                    {{ $slot }}
+                @endisset
             </div>
         </div>
     </main>
